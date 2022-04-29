@@ -4,7 +4,7 @@ body {
 }
 
 #sidebar {
-    margin: 2%;
+    margin: 1.4%;
     padding: 2%;
     height: 600px;
     width: 15%;
@@ -12,6 +12,7 @@ body {
     text-align: center;
     justify-content: center;
     color: #ffffff;
+    position: fixed;
 }
 
 #pp {
