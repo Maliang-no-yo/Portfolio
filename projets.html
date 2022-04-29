@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-projets.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="sidebar">
+        <img id="pp" src="profil.jpg">
+        <h2>Marion BOURLITIO</h2>
+        <p>Développeur Front-end à la recherche d'une alternance.</p>
+        <ul>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a class="nav-active" href="projets.html">Projets</a></li>
+            <li><a href="formations.html">Formations</a></li>
+            <li><a href="experiences.html">Expériences professionelles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div id="corps">
+        <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('tout')">Tous mes projets</button>
+            <button class="btn" onclick="filterSelection('dev')">Développement web</button>
+            <button class="btn" onclick="filterSelection('prog')">Programmation</button>
+            <button class="btn" onclick="filterSelection('design')">Design</button>
+        </div>
+        <div class="row">
+            <div class="column dev">
+                <div class="content">
+                    <img src="../Second/images/liberty.PNG" style="width:100%">
+                    <h4>Site d'e-commerce</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column dev">
+                <div class="content">
+                    <img src="../Second/images/clicker.PNG" style="width:100%">
+                    <h4>Jeu Clicker Game</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column dev">
+                <div class="content">
+                    <img src="../Second/images/mentor.PNG" style="width:100%">
+                    <h4>Mentor Goal</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+
+            <div class="column prog">
+                <div class="content">
+                    <img src="../Second/images/troll.jpg" style="width:100%">
+                    <h4>My_ls ptdrrr</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column prog">
+                <div class="content">
+                    <img src="../Second/images/troll.jpg" style="width:100%">
+                    <h4>Hyrule Castle</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column prog">
+                <div class="content">
+                    <img src="../Second/images/troll.jpg" style="width:100%">
+                    <h4>Idk</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+
+            <div class="column design">
+                <div class="content">
+                    <img src="../Second/images/croquis.PNG" style="width:100%">
+                    <h4>Croquis</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column design">
+                <div class="content">
+                    <img src="../Second/images/lunettes.PNG" style="width:100%">
+                    <h4>Analyse des mouvements</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+            <div class="column design">
+                <div class="content">
+                    <img src="../Second/images/couleurs.PNG" style="width:100%">
+                    <h4>Analyse des couleurs</h4>
+                    <p>Lorem ipsum...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        filterSelection("tout")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column");
+            if (c == "tout") c = "";
+            for (i = 0; i < x.length; i++) {
+                RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+            }
+        }
+
+        function AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+            }
+        }
+
+        function RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var currents = document.getElementsByClassName("active");
+                console.log(currents);
+                for (var b = 0; b < currents.length; b++) {
+                    currents[b].classList.remove("active");
+                }
+                this.className += " active";
+            });
+        }
+    </script>
+
+</body>
