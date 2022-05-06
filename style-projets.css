@@ -51,6 +51,7 @@ h1 {
 /* Content */
 .content {
     padding: 10px;
+    height: 400px;
     box-shadow: 1px 0 .4em #775850;
 }
 
