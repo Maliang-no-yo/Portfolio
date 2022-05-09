@@ -17,3 +17,9 @@
     max-width: 1000px;
     margin: auto;
 }
+
+.newspaper {
+    column-count: 4;
+    column-gap: 40px;
+    column-rule-style: solid;
+}

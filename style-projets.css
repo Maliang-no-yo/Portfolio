@@ -51,7 +51,7 @@ h1 {
 /* Content */
 .content {
     padding: 10px;
-    height: 400px;
+    height: 450px;
     box-shadow: 1px 0 .4em #775850;
 }
 
@@ -78,4 +78,8 @@ h1 {
 .btn.active {
     background-color: #58423c;
     color: white;
+}
+
+.projets_img {
+    height: 210px;
 }

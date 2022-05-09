@@ -44,3 +44,8 @@ li a:hover:not(.nav-active) {
     background-color: #775850;
     color: rgb(0, 0, 0);
 }
+
+span {
+    color: #58423c;
+    font-weight: bold;
+}
