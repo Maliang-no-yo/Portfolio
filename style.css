@@ -49,3 +49,15 @@ span {
     color: #58423c;
     font-weight: bold;
 }
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #58423c; 
+}
