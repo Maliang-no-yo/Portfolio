@@ -33,7 +33,7 @@
         <div class="row">
             <div class="column dev">
                 <div class="content">
-                    <img class="projets_img" src="images/liberty.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/liberty.PNG" style="width:100%">
                     <h4>Site d'e-commerce</h4>
                     <p>Utilisation du langage <span>HTML</span>, <span>CSS</span>, <span>Javascript</span>, de bases de
                         données
@@ -45,7 +45,7 @@
             </div>
             <div class="column dev">
                 <div class="content">
-                    <img class="projets_img" src="images/clicker.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/clicker.PNG" style="width:100%">
                     <h4>Jeu Clicker Game</h4>
                     <p>Développement d'un jeu web avec <span>HTML</span>, <span>CSS</span> et <span>Javascript</span>.
                     </p>
@@ -53,7 +53,7 @@
             </div>
             <div class="column dev">
                 <div class="content">
-                    <img class="projets_img" src="images/mentor.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/mentor.PNG" style="width:100%">
                     <h4>Mentor Goal</h4>
                     <p>Développement d'une extension google Chrome et Mozilla Firefox pour
                         l'entreprise Mentor Goal qui scrappe les données de sites de recherche
@@ -65,7 +65,7 @@
 
             <div class="column prog">
                 <div class="content">
-                    <img class="projets_img" src="images/graven.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/graven.PNG" style="width:100%">
                     <h4>Jeu vidéo mobile</h4>
                     <p>Développement d'un jeu vidéo vidéo type Rogue-like avec le logiciel <span>Unity</span> et le
                         langage <span>C#</span>. Ce jeu permet à un personnage de se mouvoir sur plusieurs cartes,
@@ -74,7 +74,7 @@
             </div>
             <div class="column prog">
                 <div class="content">
-                    <img class="projets_img" src="images/python.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/python.PNG" style="width:100%">
                     <h4>Apprentissage du Python</h4>
                     <p>Exercices Code Wars pour apprendre le <span>python</span> en binome. Voici notre <a
                             href="https://www.codewars.com/users/Comarentinrion">profil</a></p>
@@ -82,7 +82,7 @@
             </div>
             <div class="column prog">
                 <div class="content">
-                    <img class="projets_img" src="images/hyrule.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/hyrule.PNG" style="width:100%">
                     <h4>Hyrule Castle</h4>
                     <p>Premier projet au sein de l'ETNA, création d'un mini-jeu dans le terminal. C'est un donjon, avec
                         différents ennemis et le héros a différentes compétences. Programmé en <span>bash</span>
@@ -92,7 +92,7 @@
 
             <div class="column design">
                 <div class="content">
-                    <img class="projets_img" src="images/croquis.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/croquis.PNG" style="width:100%">
                     <h4>Croquis</h4>
                     <p>Séances de croquis de modèles de 2h/semaine pedant 1 an. Assis en cercle, chaque personne prend
                         la pose durant 2 minutes, croquis entièrement réalisés au stylo pour apprendre de ses erreurs.
@@ -101,14 +101,14 @@
             </div>
             <div class="column design">
                 <div class="content">
-                    <img class="projets_img" src="images/analyse.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/analyse.PNG" style="width:100%">
                     <h4>Analyse d'objets de design</h4>
                     <p>Analyse de l'ergonomie de différentes icones du design du XXe siècle.</p>
                 </div>
             </div>
             <div class="column design">
                 <div class="content">
-                    <img class="projets_img" src="images/frise.PNG" style="width:100%">
+                    <img class="projets_img" id="myImg" src="images/frise.PNG" style="width:100%">
                     <h4>Frise chronologique</h4>
                     <p>Réalisation d'une frise sur <span>Illustrator</span> à partir d'un élément de design pour
                         retrouver les mouvements de cette période, leurs techniques et les oeuvres dans les différents
@@ -120,7 +120,33 @@
         </div>
     </div>
 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modal-img" class="modal-content"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQS2ol73JZj6-IqypxPZXYS3rRiPwKteoD8vezk9QsRdkjt3jEn&usqp=CAU">
+        <div id="caption"></div>
+    </div>
+
     <script>
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modal-img");
+        var captionText = document.getElementById("caption");
+
+        document.addEventListener("click", (e) => {
+            const elem = e.target;
+            if (elem.id === "myImg") {
+                modal.style.display = "block";
+                modalImg.src = elem.dataset.biggerSrc || elem.src;
+                captionText.innerHTML = elem.alt;
+            }
+        })
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
         filterSelection("tout")
         function filterSelection(c) {
             var x, i;
