@@ -73,3 +73,14 @@ span {
     text-transform: uppercase;
     font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
 }
+#link {
+    color: white;
+    background-color: #58423c;
+    width: 150px;
+    padding: 1%;
+    border: none;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+}
