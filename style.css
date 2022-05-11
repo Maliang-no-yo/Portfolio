@@ -61,3 +61,15 @@ span {
 ::-webkit-scrollbar-thumb {
     background: #58423c; 
 }
+
+.panel {
+    font-weight: bold;
+    color: #58423c;
+    margin-bottom: -1%;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    text-transform: uppercase;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif; 
+}
