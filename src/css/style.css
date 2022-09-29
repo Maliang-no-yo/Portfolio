@@ -51,7 +51,7 @@ header {
     display: grid;
     width: 90vw;
     grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
-    grid-gap: 30px;
+    grid-gap: 30px 1.8em;
     text-align: center;
     justify-content: center;
 }
@@ -59,6 +59,7 @@ header {
 .item-container {
     width: 400px;
     height: 250px;
+    padding-bottom: 30px;
 }
 
 .item {
