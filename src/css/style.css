@@ -12,6 +12,7 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: black;
+  overflow-x: hidden;
 }
 
 main {
@@ -22,7 +23,9 @@ main {
 
 header {
     height: 100vh;
+    width: 100vw;
     color: white;
+    cursor: default;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -42,8 +45,9 @@ header {
 }
 
 #projets-content {
-    padding: 5%;
+    padding: 3%;
     display: flex;
+    width: 100vw;
     justify-content: center;
 }
 
@@ -58,7 +62,6 @@ header {
 
 .item-container {
     width: 400px;
-    height: 250px;
     padding-bottom: 30px;
 }
 
@@ -84,10 +87,10 @@ header {
 
 .item-container:hover .hidden {
     width:100%;
-    height:100%;
+    height:90%;
     background:rgba(55, 55, 55, 0.908);
     position:absolute;
-    top: -16px;;
+    top: -16px;
     padding-top: 10%;
     border-radius: 10px;
     cursor: pointer;
@@ -108,7 +111,13 @@ header {
 
 #contact-content {
     padding: 5%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
+/* Iphone SE & Galaxy S8+ */
+@media only screen and (max-height: 1000px) {
+    .item-container {
+        width: 85%;
+        padding-bottom: 30px;
+    }
+}
